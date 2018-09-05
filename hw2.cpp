@@ -10,17 +10,40 @@ class List {
        head = NULL;
        tail = NULL;
         }
-    length();
-    get();
+    int length()
+    {
+      ListNode *a = head;
+      int b = 1;
+      while(a != NULL)
+      {
+          b++;
+      }
+      return b;
+    }
+    ListNode get(int n)
+    {
+         ListNode *a = head;
+         for(int i = 1; i < n; i++)
+         {
+              a = a->getNext;
+         }
+        return a;
+            
+    }
     void push_back(string a)
     {
       append(a);
     }
-    remove_front();
+    string remove_front()
+    {
+      string a;
+      remove(a);
+      return a;
+    }
     ~List()
     {
       // Free all of the ListNodes in the list
-      Item t;
+      string t;
       while(!empty()) // while not empty
          remove(t);   // remove the next node
     }
@@ -39,11 +62,15 @@ class List {
       }
       }
    
-    bool remove(Item &copy) 
+    bool empty()
+    {
+      return head == NULL;
+    }
+    bool remove(string &copy) 
     {
         if (!empty()) // if list is not empty
         {
-           copy = head->getItem(); // return copy
+           copy = head->getString(); // return copy
             ListNode *tmp = head->getNext();
             delete head; // delete the node
             head = tmp;  // update the head
