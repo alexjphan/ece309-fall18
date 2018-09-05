@@ -6,4 +6,4 @@ Repository for students to fork and modify.
 
 * HW2
   * Forked repo
-  * Edited README file
+  * Edited README file.
