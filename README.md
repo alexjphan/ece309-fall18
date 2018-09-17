@@ -7,3 +7,5 @@ Repository for students to fork and modify.
 * HW2
   * Forked repo
   * Edited README file.
+
+[![Build Status](https://travis-ci.org/ajphan/ece309-fall18-ajphan.svg?branch=master)](https://travis-ci.org/ajphan/ece309-fall18-ajphan)
