@@ -1,4 +1,4 @@
-#include <stdio.h
+#include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
 
@@ -7,12 +7,39 @@
 
 using namespace std;
 
-class Item
+class Object
 {
-public:
-  const char *str;
-  Item(const char *s=""):str(s) {}
+	public:
+	virtual void print(){printf("Object");}
 };
+
+class Num : public Object
+{
+	public:
+		Num(int i){dataNum = i;}
+		void print(){cout<<dataNum<<endl;}
+	private:
+		int dataNum;
+};
+
+class Doub : public Object
+{
+	public:
+		Doub(double d){dataDoub = d;}
+		void print(){cout<<dataDoub<<endl;}
+	private:
+		double dataDoub;
+};
+
+class Strn : public Object
+{
+	public:
+		Strn(string s){dataStrn = s;}
+		void print(){cout<<dataStrn<<endl;}
+	private:
+		string dataStrn;
+};
+
 
 class DList {
 private:
@@ -20,12 +47,12 @@ private:
   // node of the list
   class DListNode {
   public:
-    Item item;
+    Object *object;
     DListNode *next;
     DListNode *prev;
-    DListNode(Item i,DListNode *n=NULL, DListNode *p=NULL)
+    DListNode(Object *o,DListNode *n=NULL, DListNode *p=NULL)
     {
-      item = i; next = n; prev = p; // constructs the node for us
+      object = o; next = n; prev = p; // constructs the node for us
     }
   };
 
@@ -40,7 +67,7 @@ public:
 
   public:
     iterator(DListNode *n=NULL) { node = n; }
-    Item &getItem() { return node->item; }
+    Object *getObject() { return node->object; }
     void increment() { node = node->next; }
     bool end() {  return node==NULL; }
 
@@ -49,9 +76,11 @@ public:
 
 public:
   DList();
-  void append(Item a);
-  void insertAfter(iterator it, Item a);
+  void append(Object *a);
+  void insertAfter(iterator it, Object *a);
   void erase(iterator it);
+  DListNode* begin(){return head;}
+  DListNode* end(){return tail;}
   bool empty();
 };
 

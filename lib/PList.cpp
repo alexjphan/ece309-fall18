@@ -1,4 +1,4 @@
-#include "DList.h"
+#include "PList.h"
 
 
 DList::DList()
@@ -8,7 +8,7 @@ DList::DList()
   tail = NULL;
 }
 
-void DList::append(Item a)
+void DList::append(Object *a)
 {
   DListNode *node = new DListNode(a,NULL,tail);
   if (head == NULL)
@@ -25,10 +25,10 @@ void DList::append(Item a)
 }
 
 
-void DList::insertAfter(DList::iterator it, Item item)
+void DList::insertAfter(DList::iterator it, Object *object)
 {
   if(head==NULL || it.node == NULL) { // NULL iterator means insert at head
-     DListNode *node = new DListNode(item,head); // next=head, prev=NULL
+     DListNode *node = new DListNode(object,head); // next=head, prev=NULL
      if (head==NULL) // same as zyBook
         head = tail = node;
      else { // if inserting before head, it.node==NULL
@@ -36,11 +36,11 @@ void DList::insertAfter(DList::iterator it, Item item)
         head = node;
      }
   } else if (it.node == tail) {
-     DListNode *node = new DListNode(item,NULL,tail); // next=NULL, prev=old tail
+     DListNode *node = new DListNode(object,NULL,tail); // next=NULL, prev=old tail
      tail->next = node;
      tail = node;
        } else {
-     DListNode *node = new DListNode(item,it.node->next,it.node);
+     DListNode *node = new DListNode(object,it.node->next,it.node);
      it.node->next = node;
      node->next->prev = node;
    }
@@ -56,26 +56,24 @@ int main()
 {
   DList l;
 
-  l.append("milk");
-  l.append("bread");
-  l.append("eggs");
+  Num *two = new Num(2);
+  Doub *pi = new Doub(3.14);
+  Strn *yo = new Strn("yo");
 
-/*
-  DList::iterator i,j;
+  l.append(two);
+  l.append(pi);
+  l.append(yo);
+
+
+  DList::iterator i;
   printf("Forward: ");
   for(i = l.begin();!i.end();i.increment())
   {
-    Item &item = i.getItem();
-    printf("%s ",item.str);
+    Object *object = i.getObject();
+    object->print();
   }
-  l.erase(l.rbegin()); // remove the last item in list
-  printf("\nIn reverse: ");
-  for(j = l.rbegin();!j.end();j.decrement())
-  {
-    Item &item = j.getItem();
-    printf("%s ",item.str);
-  }
+
   printf("\n");
-  */
+
   return 0;
 }
