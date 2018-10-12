@@ -9,6 +9,7 @@ public:
             i++;
         }
         length = i;
+        a = new int[length];
         for (i = 0; i < length; i++){
             a[i] = (int)str[i];
         }
