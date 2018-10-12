@@ -26,7 +26,7 @@ public:
 
     int get(int index) const{return a[index];}
 
-    int getlength(){return length;}
+    int getLength(){return length;}
 
     void set(int index, int val){a[index] = val;}
 
