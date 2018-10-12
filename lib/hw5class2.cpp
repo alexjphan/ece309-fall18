@@ -16,7 +16,7 @@ public:
 
     IntArray(int size, int val=0){
         length = size;
-        a = new int[size]
+        a = new int[size];
         for (int i = 0; i < size; i++){
             a[i] = val;
         }
@@ -110,8 +110,9 @@ public:
             average += a[i];
         }
         average = average / length;
-        return average
+        return average;
     }
+};
 
 int main(){
 
