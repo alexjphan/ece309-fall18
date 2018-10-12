@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = hw5class1.o
+OBJ = hw5class2.o
 all: libece309.a
 
 test: all

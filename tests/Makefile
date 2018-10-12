@@ -1,6 +1,6 @@
 
 # list the name of each file (without the .cpp file at the end)
-EXE = hw5class1
+EXE = hw5class2
 
 all: $(EXE)
 
