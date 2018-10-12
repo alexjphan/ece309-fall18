@@ -28,7 +28,7 @@ public:
         }
         return false;
     }
-    bool search(int x) {
+    bool search(int x) const {
         for (int i = 0; i < IntegerSet::size; i++) {
             if (a[i] = x) {
                 return true;
@@ -47,5 +47,8 @@ public:
 };
 
 int main(){
+    int IntegerSetArray boob(5);
+    boob.insert(3);
+
     return 0;
 }
