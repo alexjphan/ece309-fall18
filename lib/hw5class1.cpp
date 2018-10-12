@@ -47,7 +47,7 @@ public:
 };
 
 int main(){
-    IntegerSetArray boob = new IntegerSetArray(5);
+    IntegerSetArray boob(5);
     boob.insert(3);
 
     return 0;
