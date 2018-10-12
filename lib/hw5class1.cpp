@@ -30,7 +30,7 @@ public:
     }
     bool search(int x) const {
         for (int i = 0; i < IntegerSet::size; i++) {
-            if (a[i] = x) {
+            if (a[i] == x) {
                 return true;
             }
         }
@@ -38,7 +38,7 @@ public:
     }
     void remove(int x){
         for (int i = 0; i < IntegerSet::size; i++) {
-            if (a[i] = x) {
+            if (a[i] == x) {
                 a[i] = -1;
             }
         }
