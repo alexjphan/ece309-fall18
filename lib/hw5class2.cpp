@@ -78,7 +78,7 @@ public:
     }
 
     IntArray operator<<(int count) const{
-        IntArraytemp(length);
+        IntArray temp(length);
         for(int i = 0; i < length; i++){
             if (i - count < 0)
                 temp[i] = get(length + i - count);
