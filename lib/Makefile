@@ -1,7 +1,6 @@
 
 # add files you create here
-OBJ = PList.o
-
+OBJ = hw5class1.o
 all: libece309.a
 
 test: all
