@@ -22,6 +22,14 @@ public:
         }
     }
 
+    int* geta(){return a;}
+
+    int get(int index) const{return a[index];}
+
+    int getlength(){return length;}
+
+    void set(int index, int val){a[index] = val;}
+
     int& operator[](int index){return a[index];}
 
     IntArray& operator+=(const IntArray &rhs) {
