@@ -104,7 +104,7 @@ public:
         if(!zero){
             char* newtemp = new char[length+1];
             for(int i = 0; i < length; i++){
-                newtemp[i] = temp[i]
+                newtemp[i] = temp[i];
             }
             newtemp[length] = (char)0;
             return newtemp;
