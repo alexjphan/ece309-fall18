@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = hw5class2.o
+OBJ = IntegerSet.o
 all: libece309.a
 
 test: all
