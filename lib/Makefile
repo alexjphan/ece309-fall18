@@ -1,6 +1,6 @@
 
 # add files you create here
-OBJ = IntegerSet.o
+OBJ = IntInf.o
 all: libece309.a
 
 test: all
