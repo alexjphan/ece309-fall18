@@ -35,6 +35,7 @@ public:
     bool undefined() const
     {
         if (pos_inf == 1 && neg_inf == 1 ) return true;
+        return false;
     }
 
     IntInf& operator=(const IntInf &rhs)
