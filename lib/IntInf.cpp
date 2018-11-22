@@ -197,6 +197,7 @@ public:
             {
                 return false;
             }
+            return false;
     }
 
     bool operator>(const IntInf &rhs)
@@ -225,6 +226,7 @@ public:
       {
           return true;
       }
+      return false;
 
     }
 
@@ -254,6 +256,7 @@ public:
       {
           return false;
       }
+      return false;
 
     }
 };
